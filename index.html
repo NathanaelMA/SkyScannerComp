@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital One Flights</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="script.js"></script>
+    <link rel="icon" href="airplaneCapOne.PNG" type="image/icon type">
+   <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="mainBody">
+            <!--container with css animation and title -->
+        <div class="leftContainer">
+            <img src="plane.jpg" alt="outside view from plane" class="WindowView">
+            <h1>Capital One </h1>
+            <h2>Flights</h2>
+                <div class="animate">
+                    <div class="earth">
+                        <img src="plane-top.png" alt="">
+                    </div>
+                </div>
+        </div>
+            <!-- container with user input and submit button-->
+        <div class="rightContainer">
+            <div class="dateDescript">
+                <p>outboundDate</p>
+                <p>inboundDate-Optional</p>
+            </div>
+            <div class="inputChart">   
+            <input type="date" id="outboundDate" required>
+            <input type="date" id="inboundDate">
+            <input type="text" placeholder="currency..." id="currency" required>
+            <input type="text" placeholder="Origin PLace..." id="originPlace" required>
+            <input type="text" placeholder="Destination..." id="destinationPlace" required>
+            <button type="button" onclick= getInputValue(); >Let's Fly</button>
+        </div>
+            <img src="map.jpg" alt="picture of map and camera">
+        </div>
+    </div>
+
+    <div class="chart">
+            <!--static chart display & sort/filter dropdown-->
+        <ul class="headChart">
+            <li id="FromCity">Departure City</li>
+            <li id="ToCity">Arrival City</li>
+            <li id="Price">Price</li>
+            <div class="dropdown">
+                <button onclick="sortFilter()" class="dropbtn">Sort By / View Cheapest</button>
+                <div id="dropDown" class="dropdown-content">
+                    <button type="button" onclick= sortLowest(); >Sort by Lowest</button>
+                    <button type="button" onclick= sortHighest(); >Sort by Highest</button>
+                    <button type="button" onclick= LowestPrice(); >Lowest Price</button>
+                </div>
+            </div>
+        </ul>
+        <hr>
+            <!--dynamic chart-->
+        <div class="chartBody">
+            <ul class="ExitCity"></ul>
+            <ul class="EnterCity"></ul>
+            <ul class="Price"></ul>
+            <ul class="minPrice"></ul>
+
+        </div>
+        <p class="NoResponse"></p>
+    </div>
+
+</body>
+</html>

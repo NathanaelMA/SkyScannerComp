@@ -1,4 +1,4 @@
-#Capital One Software Summit Competition
+# Capital One Software Summit Competition
 
 Design - Adobe XD, SASS, CSS, HTML
 
